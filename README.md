@@ -16,18 +16,17 @@ This repository contains **only the public website**. It contains no application
 | `assets/favicon.svg` | Icon |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
-All links are relative, so the site works at `https://USERNAME.github.io/jarvis-site/` (or any other folder or domain). There are no cookies, analytics or third-party requests, and every page sets a strict Content Security Policy.
+All links are relative, so the site works at `https://m12ygl.github.io/jarvis-site/` (or any other folder or domain). There are no cookies, analytics or third-party requests, and every page sets a strict Content Security Policy.
 
 ## Before publishing
 
-Search for `[[CONFIRM` and replace every marked item:
+This check should print nothing (no unfinished placeholders):
 
 ```bash
-grep -rn "\[\[CONFIRM" .
+grep -rn "\[\[CONFIRM" --exclude=README.md .
 ```
 
-- **Contact email** in `privacy.html` and `terms.html`.
-- **Limited Use statement** in `privacy.html`, section 15: remove the reminder line once model training is switched off in the ChatGPT account JARVIS uses.
+Keep the privacy policy true over time: model training must stay switched off in the ChatGPT account JARVIS uses (ChatGPT → Settings → Data controls → “Improve the model for everyone” → Off), or section 15 of `privacy.html` must be rewritten.
 
 ## Publish with GitHub Pages (free)
 
@@ -35,10 +34,10 @@ grep -rn "\[\[CONFIRM" .
 2. In Terminal:
    ```bash
    cd ~/Documents/jarvis-site
-   git remote add origin https://github.com/USERNAME/jarvis-site.git
+   git remote add origin https://github.com/m12ygl/jarvis-site.git
    git push -u origin main
    ```
-   Replace `USERNAME` with your GitHub username. (The folder is already a Git repository with one commit.)
+   (The folder is already a Git repository with its commits.)
 3. On GitHub, open the repository, then **Settings → Pages**.
 4. Under **Build and deployment**, set **Source: Deploy from a branch**, **Branch: `main`**, folder **`/ (root)`**, then **Save**.
 5. Wait a minute or two. The Pages settings screen shows **“Your site is live at …”** once it has deployed. Only then is the site published.
@@ -49,11 +48,11 @@ In **Google Auth Platform → Branding**:
 
 | Field | Address |
 |---|---|
-| Application home page | `https://USERNAME.github.io/jarvis-site/` |
-| Application privacy policy link | `https://USERNAME.github.io/jarvis-site/privacy.html` |
-| Application terms of service link | `https://USERNAME.github.io/jarvis-site/terms.html` |
+| Application home page | `https://m12ygl.github.io/jarvis-site/` |
+| Application privacy policy link | `https://m12ygl.github.io/jarvis-site/privacy.html` |
+| Application terms of service link | `https://m12ygl.github.io/jarvis-site/terms.html` |
 
-Google may also ask you to verify ownership of the `USERNAME.github.io` domain if you submit the app for verification; that is not needed for the personal, unverified use described in the privacy policy.
+Google may also ask you to verify ownership of the `m12ygl.github.io` domain if you submit the app for verification; that is not needed for the personal, unverified use described in the privacy policy.
 
 ## Updating the policy
 
