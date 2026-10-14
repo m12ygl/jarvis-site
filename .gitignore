@@ -1,0 +1,7 @@
+# Never publish anything private
+.env
+.env.*
+*.db
+*.sqlite
+*.enc
+.DS_Store

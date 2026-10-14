@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>J.A.R.V.I.S. · Private personal AI assistant</title>
+    <meta name="description" content="J.A.R.V.I.S. is a private, locally run personal AI assistant developed for one person's own use. It is not a commercial product or public service." />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#02070c" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./" aria-label="J.A.R.V.I.S. home">
+          <svg viewBox="-12 -12 24 24" aria-hidden="true">
+            <circle r="10" fill="none" stroke="#2de2ff" stroke-width="1.3" opacity=".5" />
+            <circle r="5.6" fill="none" stroke="#2de2ff" stroke-width="1.3" />
+            <circle r="2.1" fill="#bff6ff" />
+          </svg>
+          J.A.R.V.I.S.
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="nav" id="site-nav" aria-label="Main">
+          <a href="#capabilities">Capabilities</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#privacy">Privacy</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div>
+            <p class="eyebrow">Private personal AI assistant</p>
+            <h1 id="hero-title">J.A.R.V.I.S.</h1>
+            <p class="expansion">Just A Rather Very Intelligent System.</p>
+            <p class="lede">A private personal AI assistant designed to bring intelligence, organisation and automation together, running on its owner’s own Mac.</p>
+            <div class="badges">
+              <span class="badge">Personal use only</span>
+              <span class="badge">Runs locally</span>
+              <span class="badge">Read-only Google access</span>
+            </div>
+          </div>
+
+          <div class="reactor" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <defs>
+                <radialGradient id="core-grad">
+                  <stop offset="0" stop-color="#ffffff" />
+                  <stop offset=".35" stop-color="#bff6ff" />
+                  <stop offset="1" stop-color="#2de2ff" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <g class="spin-c" fill="none" stroke="#2de2ff">
+                <circle cx="200" cy="200" r="186" stroke-opacity=".14" />
+                <circle cx="200" cy="200" r="176" stroke-opacity=".5" stroke-width="1" stroke-dasharray="2 9" />
+              </g>
+              <g class="spin-a" fill="none" stroke="#2de2ff" stroke-width="3" stroke-linecap="round">
+                <path d="M200 46 A154 154 0 0 1 336 128" stroke-opacity=".85" />
+                <path d="M354 200 A154 154 0 0 1 300 318" stroke-opacity=".45" />
+                <path d="M200 354 A154 154 0 0 1 64 272" stroke-opacity=".85" />
+                <path d="M46 200 A154 154 0 0 1 100 82" stroke-opacity=".45" />
+              </g>
+              <g class="spin-b" fill="none" stroke="#3b82ff" stroke-width="1.5">
+                <circle cx="200" cy="200" r="128" stroke-opacity=".35" stroke-dasharray="40 14" />
+              </g>
+              <g fill="#2de2ff" fill-opacity=".12" stroke="#2de2ff" stroke-opacity=".7">
+                <path d="M200 92 L222 118 L178 118 Z" />
+                <path d="M308 200 L282 222 L282 178 Z" />
+                <path d="M200 308 L178 282 L222 282 Z" />
+                <path d="M92 200 L118 178 L118 222 Z" />
+              </g>
+              <circle cx="200" cy="200" r="96" fill="none" stroke="#2de2ff" stroke-opacity=".55" stroke-width="2" />
+              <polygon points="200,146 247,227 153,227" fill="none" stroke="#bff6ff" stroke-width="2" stroke-opacity=".8" />
+              <circle class="core" cx="200" cy="200" r="58" fill="url(#core-grad)" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="wrap reveal">
+          <p class="eyebrow">What it is</p>
+          <h2 id="about-title">A personal assistant, built for one person.</h2>
+          <p class="intro">
+            JARVIS is a privately developed application that its developer runs on their own Mac for personal use. It is not sold, not offered as a service and not available for anyone else to sign up to. This site exists to describe the project and to publish its privacy policy and terms, as Google requires for applications that connect to Google accounts.
+          </p>
+          <div class="notice">
+            <strong>Not a public product.</strong> There is no download, no account to create and no public sign-in. If you have reached this page from a Google sign-in screen, it belongs to the developer’s personal installation.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="capabilities" aria-labelledby="cap-title">
+        <div class="wrap">
+          <div class="reveal">
+            <p class="eyebrow">Capabilities</p>
+            <h2 id="cap-title">What JARVIS does today, and what is still to come.</h2>
+            <p class="intro">Every capability is labelled honestly. Nothing marked “Planned” exists yet.</p>
+            <div class="legend" aria-hidden="true">
+              <span><span class="status status--live">Live</span>working today</span>
+              <span><span class="status status--readonly">Read-only</span>reads data, never changes it</span>
+              <span><span class="status status--planned">Planned</span>not built yet</span>
+            </div>
+          </div>
+
+          <div class="grid">
+            <article class="card reveal">
+              <span class="status status--live">Live</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 10h.01M12 10h.01M16 10h.01" /></svg>
+              <h3>Natural conversation</h3>
+              <p>Conversations with a refined British personality, powered by OpenAI’s Codex through the developer’s own ChatGPT subscription. Replies stream in as they are written.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--live">Live</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 4h10l3 3v13H4V7zM8 4v5h7V4M7 14h10M7 17h6" /></svg>
+              <h3>Conversation history and memory</h3>
+              <p>Conversations are saved on the Mac. Long-term memories are kept only when the owner asks (“remember that…”) or approves a suggestion.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--live">Live</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" /></svg>
+              <h3>Voice interaction</h3>
+              <p>Push-to-talk speech recognition on the Mac itself, and spoken replies in a British voice generated locally. The microphone opens only when the button is pressed; recordings are not stored.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--readonly">Read-only</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M8 14h2M12 14h2M8 17h2" /></svg>
+              <h3>Google Calendar</h3>
+              <p>Answers questions such as “What’s on tomorrow?” or “Am I free on Friday?” from the owner’s calendars. JARVIS cannot create, change or delete events.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--readonly">Read-only</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6l9-6" /></svg>
+              <h3>Gmail</h3>
+              <p>Finds and summarises the owner’s emails on request (“Find the latest email from BMW”). JARVIS cannot send, delete, label or move email.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--live">Live</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9c-4.5-1-8-4-8-9V6z" /></svg>
+              <h3>Secure local architecture</h3>
+              <p>The application runs on the owner’s Mac and accepts connections from that Mac only. Sign-in tokens are encrypted, with the key held in the macOS Keychain.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--planned">Planned</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1l2-2M4 12l1 1l2-2M4 18l1 1l2-2" /></svg>
+              <h3>Task management</h3>
+              <p>Tasks and reminders. Not built yet; JARVIS does not currently create or track tasks.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--planned">Planned</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 2L5 13h6l-1 9l8-11h-6z" /></svg>
+              <h3>Personal productivity</h3>
+              <p>Daily briefings and routines that combine calendar, email and reminders. Not built yet.</p>
+            </article>
+            <article class="card reveal">
+              <span class="status status--planned">Planned</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2M11 18h2" /></svg>
+              <h3>iPhone companion</h3>
+              <p>A native iPhone app connecting securely to the owner’s Mac. In planning only.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="architecture" aria-labelledby="arch-title">
+        <div class="wrap">
+          <div class="reveal">
+            <p class="eyebrow">Architecture</p>
+            <h2 id="arch-title">Local first, with clear boundaries.</h2>
+            <p class="intro">JARVIS runs as two parts on one Mac: an interface in the browser and a small backend that holds the credentials. Nothing is hosted on a JARVIS server, because there is none.</p>
+          </div>
+          <div class="split">
+            <div class="card reveal">
+              <h3>On the Mac</h3>
+              <ul class="list">
+                <li>Interface and backend<span>The backend only accepts requests from the same Mac.</span></li>
+                <li>Conversation history and memories<span>A local database, with daily local backups.</span></li>
+                <li>Speech recognition and voice<span>Processed on the Mac; recordings are not kept.</span></li>
+                <li>Google sign-in tokens<span>Encrypted (AES-256-GCM); key in the macOS Keychain.</span></li>
+              </ul>
+            </div>
+            <div class="card reveal">
+              <h3>Outside the Mac</h3>
+              <ul class="list">
+                <li>OpenAI (Codex)<span>Receives each message to write the reply, including any calendar or email details JARVIS fetched for that question.</span></li>
+                <li>Google<span>Calendar and Gmail are read through Google’s official APIs, only when the owner asks.</span></li>
+                <li>Nothing else<span>No analytics, advertising or tracking, in the application or on this site.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="privacy" aria-labelledby="priv-title">
+        <div class="wrap reveal">
+          <p class="eyebrow">Privacy</p>
+          <h2 id="priv-title">Privacy, in plain English.</h2>
+          <div class="split">
+            <ul class="list">
+              <li>Read-only Google access<span>Calendar and Gmail are read, never changed. Email is never sent.</span></li>
+              <li>Fetched on request<span>Google data is retrieved only when the owner asks a calendar or email question.</span></li>
+              <li>Not stored as raw data<span>Fetched events and emails are not saved by JARVIS; its written replies are kept in the local history.</span></li>
+            </ul>
+            <ul class="list">
+              <li>Shared with the AI to answer<span>The relevant details go to OpenAI (Codex) so it can write the reply.</span></li>
+              <li>Email bodies can be switched off<span>One setting limits sharing to sender, subject and a short preview.</span></li>
+              <li>Disconnect at any time<span>Access is revoked at Google and local tokens are deleted.</span></li>
+            </ul>
+          </div>
+          <a class="cta" href="privacy.html">Read the full privacy policy <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div>J.A.R.V.I.S. · A private personal project · © <span data-year>2026</span></div>
+        <nav aria-label="Legal">
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+        <p class="fineprint">
+          JARVIS’s use of information received from Google APIs is described in the <a href="privacy.html#google-policy">privacy policy</a>. JARVIS is an independent personal project. It is not affiliated with, endorsed by or verified by Google, OpenAI, Apple or Marvel.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
