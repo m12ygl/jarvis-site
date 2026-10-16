@@ -63,7 +63,7 @@
         <article>
           <p class="eyebrow">Legal</p>
           <h1>Privacy policy</h1>
-          <p class="meta">Effective 14 October 2026 · Applies to the J.A.R.V.I.S. personal application</p>
+          <p class="meta">Effective 16 October 2026 · Applies to the J.A.R.V.I.S. personal application</p>
 
           <p>
             This policy explains exactly how JARVIS accesses, uses, stores and shares information from a Google account. It describes the application as it is actually built. Where JARVIS sends information outside the Mac it runs on, this policy says so plainly.
@@ -97,7 +97,7 @@
           </p>
 
           <h2 id="calendar"><span class="n">03</span>Calendar information retrieved</h2>
-          <p>Only when the user asks a calendar question (for example “What’s on tomorrow?” or “Am I free on Friday?”), JARVIS asks Google for the user’s visible calendars and their events in the period asked about. Google returns full event records; JARVIS keeps only these details, in memory, while preparing the reply:</p>
+          <p>When the user asks something that needs calendar information to answer, JARVIS asks Google for the user’s visible calendars and their events in the period concerned. The user may ask directly (for example “What’s on tomorrow?”), or JARVIS’s AI may judge that a request needs it (for example “Plan my evening”). “Organise my day” uses today’s events and tomorrow morning’s. Google returns full event records; JARVIS keeps only these details, in memory, while preparing the reply:</p>
           <ul>
             <li>the names of the user’s visible calendars;</li>
             <li>for each event: title, start and end times, whether it is all-day, location, a shortened description (up to 400 characters), whether it is tentative or shown as free, whether it repeats, the organiser’s name or address, the number of attendees, whether the user declined it, and whether it has a video-call link.</li>
@@ -106,10 +106,10 @@
           <p>Cancelled events are ignored. Times are handled in the Europe/London time zone. JARVIS also works out free time from these events; that calculation happens on the Mac.</p>
 
           <h2 id="gmail"><span class="n">04</span>Gmail information retrieved</h2>
-          <p>Only when the user asks an email question (for example “Check my Gmail” or “Find the latest email from BMW”), JARVIS retrieves:</p>
+          <p>When the user asks something that needs email information to answer (asked directly, for example “Check my Gmail”, or as judged by JARVIS’s AI as above), JARVIS retrieves:</p>
           <ul>
             <li><strong>For lists and searches:</strong> each matching message’s sender, subject, date, Gmail labels (such as unread or important) and Gmail’s short preview text. At most 15 messages per question; usually 10 or fewer.</li>
-            <li><strong>Full message text:</strong> only for messages the user specifically asks to read or summarise (at most three per question), and only while “Share email bodies with the AI” is switched on. The text is cleaned (formatting and hidden characters removed) and shortened to about 4,000 characters per message. When a message is read in full, Google also returns its recipients; JARVIS includes the “To” line with the message.</li>
+            <li><strong>Full message text:</strong> only for specific messages the user asks to read or summarise, or that the AI asks JARVIS to open because they are needed for the user’s request. At most three per question, and only while “Share email bodies with the AI” is switched on. The text is cleaned (formatting and hidden characters removed) and shortened to about 4,000 characters per message. When a message is read in full, Google also returns its recipients; JARVIS includes the “To” line with the message.</li>
             <li><strong>The account’s email address</strong>, read once when connecting, so the Settings screen can show which account is connected.</li>
           </ul>
           <p>Attachments are not downloaded. Emails and calendar events often contain information about other people (senders, recipients, attendees); this is handled in the same way as described here.</p>
@@ -118,6 +118,7 @@
           <p>
             Solely to answer the user’s own questions about their calendar and email inside JARVIS: listing appointments, finding free time, finding, reading and summarising emails, and pointing out messages that may need attention. The “may need attention” label comes from simple rules (unread, marked important by Gmail, from a person rather than an automated sender, or mentioning a deadline or payment), not from profiling.
           </p>
+          <p>JARVIS looks up Google information only in response to a request from the user. It never checks Google on its own initiative or on a schedule, and a task interrupted by a restart does not continue unless the user resumes it.</p>
           <p>Google information is never used for advertising, never sold, never used to assess creditworthiness, and never used to build profiles or train AI models.</p>
 
           <h2 id="oauth"><span class="n">06</span>How Google sign-in works</h2>
@@ -144,19 +145,22 @@
             <li><strong>JARVIS’s replies are saved.</strong> Conversation history (the user’s messages and JARVIS’s replies) is stored in a local database on the Mac. A reply that summarises calendar events or emails therefore contains that summary, and it is kept with the rest of the conversation.</li>
             <li><strong>A short note</strong> is saved with such a reply, for example “Checked Gmail · 3 messages · 1 read in full”. It records that a check happened, not the content.</li>
             <li><strong>Long-term memories</strong> are created only when the user explicitly asks JARVIS to remember something, or approves a suggestion drawn from the user’s own words. Nothing is remembered automatically from emails or calendar events.</li>
+            <li><strong>A tool activity log</strong> records which read-only look-up ran, when, whether it was allowed, and counts such as “5 messages”. It records no email or calendar content. It keeps at most 5,000 entries or 90 days.</li>
+            <li><strong>Task records:</strong> each task (a request for which the AI asked JARVIS for look-ups, or a task such as “Organise my day”) is recorded with the user’s message and the steps taken (which look-ups ran, with the search terms or periods used), with counts but without their results. Finished tasks are kept for 90 days; deleting the conversation a task belongs to deletes the task too.</li>
             <li>The time of the last successful calendar and email check is kept in memory only and is lost when JARVIS restarts. The “share email bodies” setting is stored in a small settings file.</li>
           </ul>
 
           <h2 id="sharing"><span class="n">09</span>When information is shared with OpenAI (Codex)</h2>
           <p>
-            <strong>Calendar and email information does leave the Mac when the user asks about it.</strong> JARVIS writes its replies using an AI service. Currently that is OpenAI’s Codex, used through the developer’s own ChatGPT subscription. To answer a calendar or email question, JARVIS sends the AI the user’s message together with the details it retrieved for that question:
+            <strong>Calendar and email information does leave the Mac when it is needed to answer the user’s request.</strong> JARVIS writes its replies using an AI service. Currently that is OpenAI’s Codex, used through the developer’s own ChatGPT subscription. To answer a calendar or email question, JARVIS sends the AI the user’s message together with the details it retrieved for that question:
           </p>
           <ul>
             <li>for calendar questions: the names of the calendars checked and, for each event in the period asked about, its date, time, title, calendar name, location, and short notes (tentative, shown as free, repeating, video call). Descriptions, organisers and attendee counts are not sent;</li>
-            <li>for email questions: each matching message’s Gmail identifier, sender, subject, date, Gmail’s preview text, whether it is unread, and any “may need attention” notes; plus, if email-body sharing is on, the sender, recipients, subject, date and cleaned text of specifically requested messages.</li>
+            <li>for email questions: each matching message’s Gmail identifier, sender, subject, date, Gmail’s preview text, whether it is unread, and any “may need attention” notes; plus, if email-body sharing is on, the sender, recipients, subject, date and cleaned text of specifically requested messages;</li>
+            <li>for “Organise my day”: the same kinds of event and email details for today and tomorrow morning, together with the free time and scheduling conflicts JARVIS calculated itself on the Mac.</li>
           </ul>
           <p>
-            This information is sent only to produce the reply the user asked for. It is marked as reference data, and the AI is instructed never to follow instructions found inside emails or events. The AI cannot access the Google account itself; it has no tools and never receives a Google token.
+            This information is sent only to produce the reply the user asked for. It is marked as reference data, and the AI is instructed never to follow instructions found inside emails or events. The AI has no tools of its own and never receives a Google token. It can only <em>ask</em> JARVIS to run one of a small set of read-only look-ups: calendar events, email search, one email in full, and saved memories. JARVIS checks every request against the user’s settings and Google permissions before running it, and returns the results marked as untrusted reference data. The AI cannot send email, change calendars or take any other action. An emergency stop in Settings → Agent tools refuses all look-ups immediately.
           </p>
           <p>
             Once sent, the information is processed by OpenAI under OpenAI’s own terms and privacy policy and the data settings of the developer’s ChatGPT account (a personal ChatGPT Plus plan). JARVIS cannot control what OpenAI does with it, including how long OpenAI keeps it or whether it is reviewed for safety or abuse under OpenAI’s policies.
@@ -188,6 +192,7 @@
             <li><strong>Google credentials:</strong> deleted by Disconnect (section 11).</li>
             <li><strong>Conversations</strong> (including replies that summarised calendar or email information): each conversation can be deleted in JARVIS’s conversation history. Deletion takes effect in the live database at once.</li>
             <li><strong>Memories:</strong> can be deleted individually or all at once in JARVIS’s Memory screen.</li>
+            <li><strong>Task records and the tool activity log</strong> (section 8): a task is deleted with its conversation; finished tasks and log entries are removed automatically after 90 days.</li>
             <li><strong>Backups:</strong> JARVIS keeps up to seven daily backups of its database on the Mac (and an extra copy before any database upgrade). A deleted conversation can remain in these local backups until they are replaced, normally within seven days, or until the backup files are deleted.</li>
           </ul>
           <p>
@@ -204,6 +209,8 @@
                 <tr><td>Fetched calendar events and email content</td><td>Only while the reply is being prepared (seconds); not saved.</td></tr>
                 <tr><td>Google tokens and connected email address</td><td>Until Disconnect, or until Google ends the access.</td></tr>
                 <tr><td>Conversation history, including JARVIS’s replies</td><td>Until the user deletes the conversation, plus up to about seven days in local backups.</td></tr>
+                <tr><td>Tool activity log (no content)</td><td>Up to 90 days or 5,000 entries.</td></tr>
+                <tr><td>Task records (the user’s request and the steps taken, without results)</td><td>Up to 90 days after the task finishes, or until its conversation is deleted.</td></tr>
                 <tr><td>Last-check times and error notes</td><td>Until JARVIS restarts (memory only).</td></tr>
                 <tr><td>Codex diagnostic logs on the Mac (technical events, no message content found)</td><td>Managed by Codex itself; not controlled by JARVIS.</td></tr>
                 <tr><td>Information sent to OpenAI</td><td>Under OpenAI’s retention policies and the ChatGPT account’s settings.</td></tr>
@@ -217,7 +224,7 @@
             <li>Read-only Google permissions only; no code exists to send email or change calendars.</li>
             <li>Encrypted token storage with the key in the macOS Keychain (section 7).</li>
             <li>Email and event text is cleaned, length-limited and clearly fenced off as untrusted data before the AI sees it, to resist instructions hidden in emails.</li>
-            <li>The AI runs with all tools disabled, so it cannot act on anything it reads.</li>
+            <li>The AI’s own tools are disabled. It can only request JARVIS’s read-only look-ups, each of which is checked, time-limited, logged without email or calendar content, and covered by an emergency stop. Nothing can be sent, changed or deleted.</li>
             <li>JARVIS’s request logs record only the type and address of each request, never message content, email content or tokens. Codex’s own diagnostic logs are described in section 9.</li>
           </ul>
           <p>No system is perfectly secure, and JARVIS has not been independently audited or certified.</p>
@@ -227,8 +234,8 @@
             <strong>JARVIS’s use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</strong> In practice this means:
           </p>
           <ul>
-            <li><strong>Use:</strong> Google user data is used only to provide the calendar and email features described in this policy, which the user requests in JARVIS’s Assistant and manages in Settings → Google.</li>
-            <li><strong>Transfer:</strong> it is transferred only to the AI service described in section 9, only when the user asks a calendar or email question, and only to produce that answer. It is not transferred to anyone else.</li>
+            <li><strong>Use:</strong> Google user data is used only to provide the calendar and email features described in this policy, which the user requests in JARVIS (its Assistant, Dashboard and Tasks screens) and manages in Settings → Google.</li>
+            <li><strong>Transfer:</strong> it is transferred only to the AI service described in section 9, only when needed to answer a request the user has made, and only to produce that answer. It is not transferred to anyone else.</li>
             <li><strong>Prohibited uses:</strong> it is not sold, not used for advertising, not transferred to advertising platforms, data brokers or information resellers, and not used to determine creditworthiness or for lending purposes.</li>
             <li><strong>AI models:</strong> JARVIS does not use Google user data to create, train or improve AI or machine-learning models. Model training is switched off for the ChatGPT account JARVIS uses (see section 9).</li>
             <li><strong>Human access:</strong> the developer, who is the only user, sees the data only while using JARVIS, and does not allow anyone else to read it. Processing by OpenAI, including any safety review, is governed by OpenAI’s policies.</li>
